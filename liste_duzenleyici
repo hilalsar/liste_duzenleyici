@@ -1,0 +1,23 @@
+flatten ve reverse fonksiyonlarını içerir.
+def flatten(nested_list):
+    result = []
+    for item in nested_list:
+        if isinstance(item,list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+            
+    return result
+def deep_reverse(lst):
+    reversed_list= []
+    for item in reversed(lst):
+        if isinstance(item , list):
+            reversed_list.append(deep_reverse(item))
+        else:
+            reversed_list.append(item)
+            
+    return reversed_list
+nested = [[1, 'a' , ['cat'] , 2] , [[[3]], 'dog' ], 4,5]
+print("flatten sonucu:" , flatten(nested))
+original = [[1, 2], [3, 4], [5, 6, 7]]
+print("deep reverse sonucu:", deep_reverse(original))
