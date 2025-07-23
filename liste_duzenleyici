@@ -1,4 +1,4 @@
-flatten ve reverse fonksiyonlarını içerir.
+#flatten ve reverse fonksiyonlarını içerir.
 def flatten(nested_list):
     result = []
     for item in nested_list:
